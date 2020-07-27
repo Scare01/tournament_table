@@ -83,16 +83,6 @@
         flex-grow: 1;
         position: relative;
     }
-    .match::before {
-        content: "";
-        display: block;
-        min-height: 30px;
-        position: absolute;
-        left: -10px;
-        top: 50%;
-        margin-top: -15px;
-        margin-left: -2px;
-    }
     .match:nth-child(odd)::after {
         content: "";
         display: block;
