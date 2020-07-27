@@ -7877,6 +7877,17 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
+vue-tournament-bracket-generator@diegomengarda/vue-tournament-bracket-generator:
+  version "0.0.2"
+  resolved "https://codeload.github.com/diegomengarda/vue-tournament-bracket-generator/tar.gz/c8a68f9d7a217bde6f2681c8dcd385563602796b"
+
+vue-tournament-bracket@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-tournament-bracket/-/vue-tournament-bracket-2.1.1.tgz#176109a0de1984359a0f67aba302fbef36775430"
+  integrity sha512-XWGD/TyiSg8/jYxX8tKT12tLg2F4xlYkk7MAwykEBq0o+/xVaqCTB2aXcGNzqSCURC9am2puM5edWRwgD5d9qQ==
+  dependencies:
+    vue "^2.6.11"
+
 vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
