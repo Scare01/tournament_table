@@ -4,6 +4,7 @@
       :bracket-size="brackerSize"
       @change-bracket-size="changeBracketSize"
     />
+    <PlayersList :players="getPlayers()" />
     <Table
       :key="tableKey"
       :bracket-size="brackerSize"
@@ -13,13 +14,15 @@
 
 <script>
 import Table from './components/table';
-import InputComponent from './components/input'
+import InputComponent from './components/input';
+import PlayersList from './components/list-players';
 
 export default {
   name: 'App',
   components: {
     Table,
     InputComponent,
+    PlayersList,
   },
   data() {
     return {
@@ -32,6 +35,15 @@ export default {
       this.brackerSize = Number(brackerSize, 10);
       this.tableKey += 1;
     },
+    getPlayers() {
+      let players = [];
+
+      for (let i = 1; i <= this.brackerSize; i++) {
+        players.push(`player${i}`);
+      }
+      console.log(players);
+      return players;
+    }
   },
 }
 </script>
