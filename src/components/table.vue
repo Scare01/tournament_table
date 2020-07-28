@@ -1,53 +1,36 @@
 <template>
-  <div>
-    <div class="config">
-      <strong>Количество игроков:</strong>
-      <input
-        type="text"
-        v-model="bracketSize">
-    </div>
-    <div class="tournament-brackets">
-        <div class="bracket">
-            <template v-for="(round, index) in rounds">
-                <div class="round" :key="index" :class="['round-' + round]">
-                    <template v-for="(match, matchIndex) in round">
-                        <div class="match" :key="matchIndex">
-                          <div class="match__content" :style="matchStyle">
-                            <!-- here add player -->
-                          </div>
+  <div class="tournament-brackets">
+      <div class="bracket">
+          <template v-for="(round, index) in rounds">
+              <div class="round" :key="index" :class="['round-' + round]">
+                  <template v-for="(match, matchIndex) in round">
+                      <div class="match" :key="matchIndex">
+                        <div class="match__content">
+                          <!-- here add player -->
                         </div>
-                    </template>
-                </div>
-            </template>
-        </div>
-    </div>
+                      </div>
+                  </template>
+              </div>
+          </template>
+      </div>
   </div>
 </template>
 
 <script>
-  const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1]
+const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1]
   export default {
     name: 'Table',
     props: {
       bracketSize: {
         type: Number,
-        default: 8
+        default: 0,
       },
-      matchStyle: {
-        type: Object,
-        default: () => ({
-          border: '2px solid green',
-          width: '100%',
-          height: '30px',
-          position: 'relative',
-        })
-      }
     },
-    computed: {
-      rounds () {
-        return defaultRounds.filter(rounds => rounds <= this.bracketSize)
-      }
-    }
+    data() {
+      return {
+        rounds: defaultRounds.filter(rounds => rounds <= this.bracketSize),
+      };
+    },
   }
 </script>
 
@@ -116,5 +99,11 @@
         position: absolute;
         top: 50%;
         left: -10px;
+    }
+    .match__content {
+      border: 2px solid green;
+      width: 100%;
+      height: 30px;
+      position: relative;
     }
 </style>
