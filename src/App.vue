@@ -6,9 +6,10 @@
     />
     <div>
       <PlayersList :players="getPlayers()" />
-      <button
-        @click="fillTable"
-      >fill table</button>
+      <div>
+        <button @click="fillTable">fill table</button>
+        <button @click="clearTable">clear table</button>
+      </div>
     </div>
     <Table
       :key="tableKey"
@@ -53,6 +54,9 @@ export default {
     },
     fillTable() {
       this.playerForTable = this.getPlayers().sort(() => Math.random() - 0.5);
+    },
+    clearTable() {
+      this.playerForTable = [];
     },
   },
 }
