@@ -4,7 +4,7 @@
       :bracket-size="brackerSize"
       @change-bracket-size="changeBracketSize"
     />
-    <div>
+    <div class="option-block">
       <PlayersList :players="getPlayers()" />
       <div>
         <button @click="fillTable">fill table</button>
@@ -42,6 +42,7 @@ export default {
     changeBracketSize(brackerSize) {
       this.brackerSize = Number(brackerSize, 10);
       this.tableKey += 1;
+      this.clearTable();
     },
     getPlayers() {
       let players = [];
@@ -63,12 +64,12 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>

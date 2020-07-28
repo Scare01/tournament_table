@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="list">
     <li
       v-for="player in players"
       :key="player"
@@ -22,3 +22,12 @@
     },
   }
 </script>
+
+<style scoped>
+  .list {
+    list-style-type: none;
+  }
+  .list > li {
+    font-size: 20px;
+  }
+</style>
