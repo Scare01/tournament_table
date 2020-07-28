@@ -4,10 +4,16 @@
       :bracket-size="brackerSize"
       @change-bracket-size="changeBracketSize"
     />
-    <PlayersList :players="getPlayers()" />
+    <div>
+      <PlayersList :players="getPlayers()" />
+      <button
+        @click="fillTable"
+      >fill table</button>
+    </div>
     <Table
       :key="tableKey"
       :bracket-size="brackerSize"
+      :players="playerForTable"
     />
   </div>
 </template>
@@ -28,6 +34,7 @@ export default {
     return {
       brackerSize: 8,
       tableKey: 0,
+      playerForTable: [],
     };
   },
   methods: {
@@ -43,7 +50,10 @@ export default {
       }
       console.log(players);
       return players;
-    }
+    },
+    fillTable() {
+      this.playerForTable = this.getPlayers().sort(() => Math.random() - 0.5);
+    },
   },
 }
 </script>

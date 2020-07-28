@@ -6,7 +6,7 @@
                   <template v-for="(match, matchIndex) in round">
                       <div class="match" :key="matchIndex">
                         <div class="match__content">
-                          <!-- here add player -->
+                          {{ round === bracketSize ? players[matchIndex] : '' }}
                         </div>
                       </div>
                   </template>
@@ -24,6 +24,12 @@ const defaultRounds = [256, 128, 64, 32, 16, 8, 4, 2, 1]
       bracketSize: {
         type: Number,
         default: 0,
+      },
+      players: {
+        type: Array,
+        default: () => {
+          return [];
+        },
       },
     },
     data() {
